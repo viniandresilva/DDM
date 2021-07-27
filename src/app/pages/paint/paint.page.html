@@ -1,0 +1,26 @@
+<ion-header #toolbar [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Paint</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col class="color-block" *ngFor="let color of colors" [style.background]="color" button (click)="selectColor(color)">
+    </ion-col>
+  </ion-row>
+
+  <ion-range min="2" max="50" [(ngModel)]="lineWidth">
+    <ion-icon size="small" slot="start" name="brush"></ion-icon>
+    <ion-icon slot="end" name="brush"></ion-icon>
+  </ion-range>
+
+  <canvas #paintCanvas
+    (mousedown)="startDrawing($event)" (touchstart)="startDrawing($event)"
+    (mousemove)="moved($event)" (touchmove)="moved($event)"
+    (mouseup)="endDrawing()" (touchend)="endDrawing()">
+  </canvas>
+</ion-content>

@@ -1,0 +1,22 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.item-sorteio {
+  width: 100px;
+}
+
+.item-button {
+  ion-button {
+    margin: auto;
+    display: block;
+    width: 100px;
+    height: 30px;
+    
+  }
+}
