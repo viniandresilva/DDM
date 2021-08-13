@@ -1,0 +1,22 @@
+<ion-header #toolbar [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Versões Android
+    </ion-list-header>
+
+    <ion-item detail button *ngFor="let item of lista" (click)="showInfo(item.nome, item.versao)">
+      <ion-icon color="success" name="logo-android"></ion-icon>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <ion-label>{{item.nome}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
