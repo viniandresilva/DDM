@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Data } from '@angular/router';
+import { Platform } from '@ionic/angular';
+import { DatabaseService } from '../app/services/database/database.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -9,6 +13,15 @@ export class AppComponent {
     { title: 'Sorteio', url: 'sorteio', icon: 'shuffle' },
     { title: 'Paint', url: 'paint', icon: 'pencil' },
     { title: 'Lista', url: 'lista', icon: 'list' },
+    { title: 'Bloco de Notas', url: 'bloconotas', icon: 'create' },
   ];
-  constructor() {}
+  constructor(
+    platform: Platform,
+    dbService: DatabaseService
+  )
+  {
+    platform.ready().then(() => {
+      dbService.createDatabase();
+    });
+  }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { BlocoNotasPage } from './pages/blocoNotas/bloconotas.page';
 import { ListaPage } from './pages/lista/lista.page';
 import { PaintPage } from './pages/paint/paint.page';
 import { SorteioPage } from './pages/sorteio/sorteio.page';
@@ -12,18 +13,19 @@ const routes: Routes = [
   },
   {
     path: 'sorteio',
-    component: SorteioPage,
     loadChildren: () => import('./pages/sorteio/sorteio.module').then( m => m.SorteioPageModule)
   },
   {
     path: 'paint',
-    component: PaintPage,
     loadChildren: () => import('./pages/paint/paint.module').then( m => m.PaintPageModule)
   },
   {
     path: 'lista',
-    component: ListaPage,
     loadChildren: () => import('./pages/lista/lista.module').then( m => m.ListaPageModule)
+  },
+  {
+    path: 'bloconotas',
+    loadChildren: () => import('./pages/bloconotas/bloconotas.module').then( m => m.BlocoNotasPageModule)
   },
 ];
 

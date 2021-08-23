@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Anotação</ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="anotacao" (click)="deleteNote()" >
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="ion-margin">
+    <ion-label position="stacked">Título</ion-label>
+    <ion-input placeholder="Informe o título" [(ngModel)]="titulo" name="titulo"></ion-input>
+  </ion-item>
+  <ion-item class="ion-margin">
+    <ion-label position="stacked">Descrição</ion-label>
+    <ion-textarea placeholder="Informe a descrição" maxlength="100" rows="4" [(ngModel)]="descricao" name="descricao"></ion-textarea>
+  </ion-item>
+
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-button (click)="save()" color="success">Salvar</ion-button>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-button (click)="close()" color="danger">Cancelar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
