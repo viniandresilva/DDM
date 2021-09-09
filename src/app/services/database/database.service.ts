@@ -19,7 +19,8 @@ export class DatabaseService {
     return this.getDB()
     .then((db: SQLiteObject) => {
       this.createTables(db);
-    });
+    })
+    .catch(err => console.error('error: ', err));
   }
 
   private createTables(db: SQLiteObject) {

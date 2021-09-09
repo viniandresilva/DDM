@@ -1,0 +1,26 @@
+<ion-header #toolbar [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Resultado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Resultado Cálculo IMC
+    </ion-list-header>
+
+   <ion-item>
+     <ion-label>IMC</ion-label>
+     <ion-input type="number" inputmode="decimal" [(ngModel)]="imc" name="imc" readonly></ion-input>
+   </ion-item>
+  </ion-list>
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-img width=200 src="../../../assets/images/{{img}}"></ion-img>
+    </ion-col>
+  </ion-row>
+</ion-content>

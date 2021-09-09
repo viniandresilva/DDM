@@ -13,7 +13,10 @@ export class AppComponent {
     { title: 'Sorteio', url: 'sorteio', icon: 'shuffle' },
     { title: 'Paint', url: 'paint', icon: 'pencil' },
     { title: 'Lista', url: 'lista', icon: 'list' },
+    { title: 'Lista Personalizada', url: 'listapersonalizada', icon: 'list' },
     { title: 'Bloco de Notas', url: 'bloconotas', icon: 'create' },
+    { title: 'Cálculo IMC', url: 'imc', icon: 'calculator' },
+    { title: 'Câmera', url: 'camera', icon: 'camera' },
   ];
   constructor(
     platform: Platform,
